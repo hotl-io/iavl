@@ -1,0 +1,49 @@
+{
+  "name": "iavl",
+  "version": "0.0.0",
+  "description": "A merklized immutable AVL tree optimized for fast read operations",
+  "author": "Markus Schmidt <markus.schmidt.84@gmail.com>",
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/mjs/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
+  "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.cjs.json && tsc -p tsconfig.mjs.json",
+    "test": "ts-node node_modules/mocha/bin/mocha test/*.test.ts",
+    "docs": "api-extractor run -l && api-documenter markdown -i temp -o docs && rimraf temp",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@confio/ics23": "^0.6.8",
+    "commander": "^9.0.0",
+    "lmdb": "^2.2.3",
+    "msgpackr": "^1.5.4",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.15.3",
+    "@microsoft/api-extractor": "^7.19.4",
+    "@types/chai": "^4.3.0",
+    "@types/chai-spies": "^1.0.3",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^16.11.22",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "chai": "^4.3.6",
+    "chai-spies": "^1.0.0",
+    "eslint": "^8.10.0",
+    "mocha": "^9.2.1",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.2",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}
