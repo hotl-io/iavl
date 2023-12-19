@@ -7,7 +7,7 @@ import { Store } from './store';
 import { numberToBuffer, sha256 } from './util';
 
 /**
- * A versioned and snapshottale IAVL+ tree for storing data that can be
+ * A versioned and snapshottable IAVL+ tree for storing data that can be
  * proven to exist using a merkle root hash of the tree.
  * 
  * @beta
